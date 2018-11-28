@@ -341,11 +341,11 @@ walmart.describe()
     <tr>
       <th>mean</th>
       <td>17223.235591</td>
-      <td>-8.044340e-14</td>
-      <td>2.339480e-13</td>
-      <td>4.784098e-13</td>
-      <td>-9.181116e-15</td>
-      <td>1.795967e-12</td>
+      <td>1.092260e-16</td>
+      <td>2.442107e-13</td>
+      <td>4.830299e-13</td>
+      <td>-1.535671e-14</td>
+      <td>1.793500e-12</td>
     </tr>
     <tr>
       <th>std</th>
@@ -457,19 +457,19 @@ for idx, val in enumerate(col_names):
 
     Walmart: Weekly_Sales~Size
     ------------------------------
-    ['Size', 0.08577198301194688, 17223.235590817574, 7406.227377928731, 0.0]
+    ['Size', 0.08577198301194788, 17223.235590817574, 7406.227377928995, 0.0]
     Walmart: Weekly_Sales~Temperature
     ------------------------------
-    ['Temperature', 0.0010145286600620196, 17223.235590817378, 805.4831797034258, 2.160985815455031e-23]
+    ['Temperature', 0.0010145286600619086, 17223.235590817385, 805.4831797033997, 2.160985815462009e-23]
     Walmart: Weekly_Sales~Fuel_Price
     ------------------------------
-    ['Fuel_Price', 0.0008029403665876789, 17223.23559081722, 716.5821103232286, 7.649612001164972e-19]
+    ['Fuel_Price', 0.0008029403665875678, 17223.235590817232, 716.5821103232406, 7.649612001156057e-19]
     Walmart: Weekly_Sales~CPI
     ------------------------------
-    ['CPI', 0.039410515354354136, 17223.235590817498, -5020.308120380828, 0.0]
+    ['CPI', 0.03941051535435469, 17223.23559081749, -5020.308120380814, 0.0]
     Walmart: Weekly_Sales~Unemployment
     ------------------------------
-    ['Unemployment', 0.0008517114683166405, 17223.235590816257, 738.024132974606, 6.825456986291679e-20]
+    ['Unemployment', 0.0008517114683160854, 17223.235590816254, 738.024132974657, 6.82545698624747e-20]
 
 
 
@@ -585,12 +585,6 @@ Interestingly the most problematic variable in terms of skewness seems to be wee
 np.log(walmart["Weekly_Sales"]).describe()
 ```
 
-    /Users/lore.dirick/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: divide by zero encountered in log
-      """Entry point for launching an IPython kernel.
-    /Users/lore.dirick/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in log
-      """Entry point for launching an IPython kernel.
-
-
 
 
 
@@ -632,14 +626,6 @@ walmart_log= walmart[walmart["Weekly_Sales"]>0]
 walmart_log["Weekly_Sales"]= np.log(walmart_log["Weekly_Sales"])
 ```
 
-    /Users/lore.dirick/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      """Entry point for launching an IPython kernel.
-
-
 Let's have another look at the histogram. What do you see?
 
 
@@ -671,19 +657,19 @@ for idx, val in enumerate(col_names):
 
     Walmart: Weekly_Sales~Size
     ------------------------------
-    ['Size', 0.10780975018477723, 8.671485180985362, 0.6116185906202907, 0.0]
+    ['Size', 0.10780975018477779, 8.671485180985364, 0.6116185906202369, 0.0]
     Walmart: Weekly_Sales~Temperature
     ------------------------------
-    ['Temperature', 0.0007654996204090603, 8.671603611690772, 0.05156909449730016, 5.340017291124216e-18]
+    ['Temperature', 0.0007654996204083941, 8.671603611690765, 0.05156909449730129, 5.3400172911155295e-18]
     Walmart: Weekly_Sales~Fuel_Price
     ------------------------------
-    ['Fuel_Price', 0.0004492812703383864, 8.67161396276943, 0.0394923265697245, 3.517664177544602e-11]
+    ['Fuel_Price', 0.0004492812703389415, 8.671613962769428, 0.039492326569715575, 3.517664177579618e-11]
     Walmart: Weekly_Sales~CPI
     ------------------------------
-    ['CPI', 0.025949085295408403, 8.671703573822908, -0.30020719745386343, 0.0]
+    ['CPI', 0.025949085295407626, 8.67170357382291, -0.3002071974538494, 0.0]
     Walmart: Weekly_Sales~Unemployment
     ------------------------------
-    ['Unemployment', 0.0002769605078790649, 8.671620744194506, 0.03101368076924437, 1.9943786070103981e-07]
+    ['Unemployment', 0.00027696050787839877, 8.671620744194511, 0.03101368076922674, 1.9943786070415512e-07]
 
 
 
@@ -892,8 +878,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.123
     Model:                            OLS   Adj. R-squared:                  0.123
     Method:                 Least Squares   F-statistic:                     1519.
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):               0.00
-    Time:                        05:34:22   Log-Likelihood:            -1.1243e+06
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
+    Time:                        12:25:24   Log-Likelihood:            -1.1243e+06
     No. Observations:               97839   AIC:                         2.249e+06
     Df Residuals:                   97829   BIC:                         2.249e+06
     Df Model:                           9                                         
@@ -925,8 +911,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.503
     Model:                            OLS   Adj. R-squared:                  0.503
     Method:                 Least Squares   F-statistic:                     1269.
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):               0.00
-    Time:                        05:34:23   Log-Likelihood:            -1.0965e+06
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
+    Time:                        12:25:24   Log-Likelihood:            -1.0965e+06
     No. Observations:               97839   AIC:                         2.193e+06
     Df Residuals:                   97760   BIC:                         2.194e+06
     Df Model:                          78                                         
@@ -1027,8 +1013,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.050
     Model:                            OLS   Adj. R-squared:                  0.050
     Method:                 Least Squares   F-statistic:                     5097.
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):               0.00
-    Time:                        05:34:23   Log-Likelihood:            -1.1282e+06
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
+    Time:                        12:25:25   Log-Likelihood:            -1.1282e+06
     No. Observations:               97839   AIC:                         2.256e+06
     Df Residuals:                   97837   BIC:                         2.257e+06
     Df Model:                           1                                         
@@ -1052,8 +1038,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.000
     Model:                            OLS   Adj. R-squared:                  0.000
     Method:                 Least Squares   F-statistic:                     21.05
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):           4.47e-06
-    Time:                        05:34:23   Log-Likelihood:            -1.1307e+06
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):           4.47e-06
+    Time:                        12:25:25   Log-Likelihood:            -1.1307e+06
     No. Observations:               97839   AIC:                         2.261e+06
     Df Residuals:                   97837   BIC:                         2.261e+06
     Df Model:                           1                                         
@@ -1094,8 +1080,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.128
     Model:                            OLS   Adj. R-squared:                  0.128
     Method:                 Least Squares   F-statistic:                     1591.
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):               0.00
-    Time:                        05:34:23   Log-Likelihood:            -1.9258e+05
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
+    Time:                        12:25:25   Log-Likelihood:            -1.9258e+05
     No. Observations:               97615   AIC:                         3.852e+05
     Df Residuals:                   97605   BIC:                         3.853e+05
     Df Model:                           9                                         
@@ -1127,8 +1113,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.624
     Model:                            OLS   Adj. R-squared:                  0.624
     Method:                 Least Squares   F-statistic:                     2074.
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):               0.00
-    Time:                        05:34:24   Log-Likelihood:            -1.5153e+05
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
+    Time:                        12:25:25   Log-Likelihood:            -1.5153e+05
     No. Observations:               97615   AIC:                         3.032e+05
     Df Residuals:                   97536   BIC:                         3.040e+05
     Df Model:                          78                                         
@@ -1229,8 +1215,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.068
     Model:                            OLS   Adj. R-squared:                  0.068
     Method:                 Least Squares   F-statistic:                     7074.
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):               0.00
-    Time:                        05:34:24   Log-Likelihood:            -1.9584e+05
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
+    Time:                        12:25:25   Log-Likelihood:            -1.9584e+05
     No. Observations:               97615   AIC:                         3.917e+05
     Df Residuals:                   97613   BIC:                         3.917e+05
     Df Model:                           1                                         
@@ -1254,8 +1240,8 @@ for col in cols:
     Dep. Variable:           Weekly_Sales   R-squared:                       0.000
     Model:                            OLS   Adj. R-squared:                  0.000
     Method:                 Least Squares   F-statistic:                     9.748
-    Date:                Wed, 17 Oct 2018   Prob (F-statistic):            0.00180
-    Time:                        05:34:24   Log-Likelihood:            -1.9925e+05
+    Date:                Wed, 28 Nov 2018   Prob (F-statistic):            0.00180
+    Time:                        12:25:26   Log-Likelihood:            -1.9925e+05
     No. Observations:               97615   AIC:                         3.985e+05
     Df Residuals:                   97613   BIC:                         3.985e+05
     Df Model:                           1                                         
@@ -1567,6 +1553,13 @@ Let's create a for loop using `RFE` where we look at the 5, 15, 25,... up until 
 
 
 ```python
+from sklearn.feature_selection import RFE
+from sklearn.linear_model import LinearRegression
+linreg = LinearRegression()
+```
+
+
+```python
 r_list = []
 adj_r_list = []
 list_n = list(range(5,86,10))
@@ -1590,25 +1583,25 @@ adj_r_list.append(adjusted_r_squared)
     dtype: float64
     Weekly_Sales    0.077103
     dtype: float64
-    Weekly_Sales    0.199123
+    Weekly_Sales    0.199108
     dtype: float64
-    Weekly_Sales    0.198376
+    Weekly_Sales    0.198361
     dtype: float64
-    Weekly_Sales    0.3477
+    Weekly_Sales    0.347698
     dtype: float64
-    Weekly_Sales    0.347091
+    Weekly_Sales    0.34709
     dtype: float64
     Weekly_Sales    0.454981
     dtype: float64
     Weekly_Sales    0.454472
     dtype: float64
-    Weekly_Sales    0.538593
+    Weekly_Sales    0.538592
     dtype: float64
     Weekly_Sales    0.538162
     dtype: float64
-    Weekly_Sales    0.608587
+    Weekly_Sales    0.608586
     dtype: float64
-    Weekly_Sales    0.608222
+    Weekly_Sales    0.608221
     dtype: float64
     Weekly_Sales    0.661651
     dtype: float64
@@ -1659,37 +1652,37 @@ MSE_train.append(mse_train)
     dtype: float64
     Weekly_Sales    3.270942
     dtype: float64
-    Weekly_Sales    2.761974
+    Weekly_Sales    2.762013
     dtype: float64
-    Weekly_Sales    2.854012
+    Weekly_Sales    2.853928
     dtype: float64
-    Weekly_Sales    2.248087
+    Weekly_Sales    2.248092
     dtype: float64
-    Weekly_Sales    2.330478
+    Weekly_Sales    2.330498
     dtype: float64
-    Weekly_Sales    1.879634
+    Weekly_Sales    1.879636
     dtype: float64
-    Weekly_Sales    1.94236
+    Weekly_Sales    1.942334
     dtype: float64
-    Weekly_Sales    1.587492
+    Weekly_Sales    1.58748
     dtype: float64
-    Weekly_Sales    1.659824
+    Weekly_Sales    1.65984
     dtype: float64
-    Weekly_Sales    1.345908
+    Weekly_Sales    1.3459
     dtype: float64
-    Weekly_Sales    1.411686
+    Weekly_Sales    1.411567
     dtype: float64
-    Weekly_Sales    1.162755
+    Weekly_Sales    1.162792
     dtype: float64
-    Weekly_Sales    1.223241
+    Weekly_Sales    1.223181
     dtype: float64
-    Weekly_Sales    0.992653
+    Weekly_Sales    0.992664
     dtype: float64
-    Weekly_Sales    1.047768
+    Weekly_Sales    1.047724
     dtype: float64
-    Weekly_Sales    0.787367
+    Weekly_Sales    0.787372
     dtype: float64
-    Weekly_Sales    0.817389
+    Weekly_Sales    0.817358
     dtype: float64
 
 
@@ -1718,9 +1711,9 @@ cv_10_results
 
 
 
-    array([-7.98705287e-01, -7.34894743e-01, -1.09719402e+00, -7.40064282e-01,
-           -8.68845883e+19, -5.69679296e-01, -1.06969762e+00, -6.17939838e-01,
-           -7.13486286e+17, -1.62585809e+00])
+    array([-7.98785632e-01, -7.34551610e-01, -1.09719699e+00, -7.40078217e-01,
+           -1.10011953e+23, -5.69693512e-01, -1.06939243e+00, -6.17916224e-01,
+           -8.88175396e+20, -1.62586906e+00])
 
 
 
