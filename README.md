@@ -585,12 +585,6 @@ Interestingly the most problematic variable in terms of skewness seems to be wee
 np.log(walmart["Weekly_Sales"]).describe()
 ```
 
-    /Users/jeffreyherman/anaconda3/envs/learn-env/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: divide by zero encountered in log
-      """Entry point for launching an IPython kernel.
-    /Users/jeffreyherman/anaconda3/envs/learn-env/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in log
-      """Entry point for launching an IPython kernel.
-
-
 
 
 
@@ -631,14 +625,6 @@ walmart_log= walmart[walmart["Weekly_Sales"]>0]
 ```python
 walmart_log["Weekly_Sales"]= np.log(walmart_log["Weekly_Sales"])
 ```
-
-    /Users/jeffreyherman/anaconda3/envs/learn-env/lib/python3.6/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      """Entry point for launching an IPython kernel.
-
 
 Let's have another look at the histogram. What do you see?
 
@@ -893,7 +879,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.123
     Method:                 Least Squares   F-statistic:                     1519.
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
-    Time:                        12:10:48   Log-Likelihood:            -1.1243e+06
+    Time:                        12:25:24   Log-Likelihood:            -1.1243e+06
     No. Observations:               97839   AIC:                         2.249e+06
     Df Residuals:                   97829   BIC:                         2.249e+06
     Df Model:                           9                                         
@@ -926,7 +912,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.503
     Method:                 Least Squares   F-statistic:                     1269.
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
-    Time:                        12:10:49   Log-Likelihood:            -1.0965e+06
+    Time:                        12:25:24   Log-Likelihood:            -1.0965e+06
     No. Observations:               97839   AIC:                         2.193e+06
     Df Residuals:                   97760   BIC:                         2.194e+06
     Df Model:                          78                                         
@@ -1028,7 +1014,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.050
     Method:                 Least Squares   F-statistic:                     5097.
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
-    Time:                        12:10:49   Log-Likelihood:            -1.1282e+06
+    Time:                        12:25:25   Log-Likelihood:            -1.1282e+06
     No. Observations:               97839   AIC:                         2.256e+06
     Df Residuals:                   97837   BIC:                         2.257e+06
     Df Model:                           1                                         
@@ -1053,7 +1039,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.000
     Method:                 Least Squares   F-statistic:                     21.05
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):           4.47e-06
-    Time:                        12:10:49   Log-Likelihood:            -1.1307e+06
+    Time:                        12:25:25   Log-Likelihood:            -1.1307e+06
     No. Observations:               97839   AIC:                         2.261e+06
     Df Residuals:                   97837   BIC:                         2.261e+06
     Df Model:                           1                                         
@@ -1095,7 +1081,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.128
     Method:                 Least Squares   F-statistic:                     1591.
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
-    Time:                        12:10:49   Log-Likelihood:            -1.9258e+05
+    Time:                        12:25:25   Log-Likelihood:            -1.9258e+05
     No. Observations:               97615   AIC:                         3.852e+05
     Df Residuals:                   97605   BIC:                         3.853e+05
     Df Model:                           9                                         
@@ -1128,7 +1114,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.624
     Method:                 Least Squares   F-statistic:                     2074.
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
-    Time:                        12:10:50   Log-Likelihood:            -1.5153e+05
+    Time:                        12:25:25   Log-Likelihood:            -1.5153e+05
     No. Observations:               97615   AIC:                         3.032e+05
     Df Residuals:                   97536   BIC:                         3.040e+05
     Df Model:                          78                                         
@@ -1230,7 +1216,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.068
     Method:                 Least Squares   F-statistic:                     7074.
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):               0.00
-    Time:                        12:10:50   Log-Likelihood:            -1.9584e+05
+    Time:                        12:25:25   Log-Likelihood:            -1.9584e+05
     No. Observations:               97615   AIC:                         3.917e+05
     Df Residuals:                   97613   BIC:                         3.917e+05
     Df Model:                           1                                         
@@ -1255,7 +1241,7 @@ for col in cols:
     Model:                            OLS   Adj. R-squared:                  0.000
     Method:                 Least Squares   F-statistic:                     9.748
     Date:                Wed, 28 Nov 2018   Prob (F-statistic):            0.00180
-    Time:                        12:10:50   Log-Likelihood:            -1.9925e+05
+    Time:                        12:25:26   Log-Likelihood:            -1.9925e+05
     No. Observations:               97615   AIC:                         3.985e+05
     Df Residuals:                   97613   BIC:                         3.985e+05
     Df Model:                           1                                         
